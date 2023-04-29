@@ -1,0 +1,9 @@
+.cs-container {
+  display: flex;
+  width: 50vh;
+}
+.cs-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

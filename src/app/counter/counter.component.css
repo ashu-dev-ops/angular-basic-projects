@@ -1,0 +1,29 @@
+.parent {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+.counter {
+  min-width: 100px;
+  gap: 20px;
+  display: flex;
+  margin: "auto";
+  /* background-color: orange; */
+  padding: 1rem;
+  -webkit-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.336);
+  border-radius: 10px;
+  /* flex-direction: column; */
+  /* margin: 20; */
+}
+.counter button {
+  border-radius: 15px;
+  padding: 4px 10px;
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.205);
+}

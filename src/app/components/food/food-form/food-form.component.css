@@ -1,0 +1,59 @@
+.box-container {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+}
+.box-1 {
+  width: 40%;
+}
+.box-2 {
+  width: 60%;
+}
+.box-2 img {
+  height: 70vh;
+  width: "100%";
+  /* clipPath: {
+    sm: " polygon(5% 0, 100% 0%, 100% 100%, 0 100%)",
+    xs: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%) ",
+  }, */
+  clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0 100%);
+}
+.cs-box-1 {
+  display: flex;
+  margin: auto;
+  /* background-color: blueviolet; */
+  justify-content: center;
+}
+
+.con-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2;
+  /* width: 200px; */
+}
+.no-item {
+  margin: 5;
+  height: 10;
+}
+@media only screen and (max-width: 600px) {
+  .box-container {
+    flex-direction: column-reverse;
+  }
+  .cs-box-1 {
+    width: 100%;
+  }
+  .box-1 {
+    width: 100%;
+  }
+  .box-2 img {
+    height: 70vh;
+    width: "100%";
+    /* clipPath: {
+      sm: " polygon(5% 0, 100% 0%, 100% 100%, 0 100%)",
+      xs: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%) ",
+    }, */
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+}

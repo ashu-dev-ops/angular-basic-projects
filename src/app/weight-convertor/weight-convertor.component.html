@@ -1,0 +1,26 @@
+<h1 style="text-align: center">weight convertor</h1>
+<div class="container">
+  <form [formGroup]="weightForm" (ngSubmit)="onSubmit()">
+    <div class="cs-box">
+      <div class="form-group m-4">
+        <input
+          type="number"
+          id="weight"
+          placeholder="enter pound"
+          class="form-control"
+          formControlName="weight"
+          name="weight"
+        />
+      </div>
+      <div class="output">{{ weight }} kg</div>
+    </div>
+    <div class="cs-box">
+      <input
+        type="submit"
+        class="btn btn-primary w-20 m-1"
+        value="Convert"
+        name=""
+      />
+    </div>
+  </form>
+</div>

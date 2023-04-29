@@ -1,0 +1,56 @@
+<h1 style="text-align: center">To do App</h1>
+<div class="page">
+  <div class="cs-center">
+    <div class="cs-box">
+      <form [formGroup]="todotForm" (ngSubmit)="onSubmit()">
+        <div class="form-group m-4">
+          <input
+            type="string"
+            id="todo"
+            placeholder="enter task"
+            class="form-control"
+            formControlName="todo"
+            name="todo"
+          />
+        </div>
+        <div class="cs-box">
+          <input
+            type="submit"
+            class="btn btn-primary w-20 m-1"
+            value="Submit"
+            name=""
+          />
+        </div>
+      </form>
+    </div>
+
+    <div class="list cs-box">
+      <div *ngIf="tasks.length === 0; else elseBlock">
+        <h3>sorry no task.</h3>
+      </div>
+      <ng-template #elseBlock>
+        <!-- <ul *ngFor="let todo of todos; index as i"> -->
+        <!-- <li *ngFor="let item of tasks; index as i;>d</li> -->
+        <ul
+          *ngFor="let item of tasks; index as i"
+          class="card"
+          style="width: 250px"
+        >
+          <li
+            style="
+              display: flex;
+              width: 200px;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h4>{{ item.task }}</h4>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(item.task)">
+              delete
+            </button>
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+</div>

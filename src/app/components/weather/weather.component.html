@@ -1,0 +1,73 @@
+<!-- <p>weather works!</p> -->
+<h1 style="text-align: center">weather</h1>
+<div class="parent" style="display: flex">
+  <div
+    class="child"
+    style="
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      -webkit-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+      padding: 10px 20px;
+      border-radius: 10px;
+      min-width: 600px;
+    "
+  >
+    <form [formGroup]="WeatherForm" (ngSubmit)="onSubmit()">
+      <div class="form-group m-4">
+        <input
+          type="text"
+          id="place"
+          placeholder="enter city"
+          class="form-control"
+          formControlName="place"
+          name="place"
+        />
+      </div>
+
+      <div class="cs-box">
+        <input
+          type="submit"
+          class="btn btn-primary w-20"
+          value="submit"
+          name=""
+        />
+      </div>
+    </form>
+    <!-- <div *ngIf="weather.temp">{{ weather.temp }}</div> -->
+    <div class="cs-box">
+      <div
+        *ngIf="weather.temp"
+        style="
+          position: relative;
+          height: 200px;
+          width: 250px;
+          /* background-color: red; */
+        "
+      >
+        <h6 style="position: absolute; right: 0; top: 10px">
+          Temprature <span> {{ weather.temp }} celcius</span>
+        </h6>
+        <img style="height: 150px" src="assets/cloudy.png" alt="" />
+      </div>
+      <div
+        *ngIf="toggle"
+        style="
+          position: relative;
+          height: 200px;
+          width: 210px;
+          /* background-color: red; */
+        "
+      >
+        <h6 style="position: absolute; right: 0; top: 10px">
+          please enter the city
+        </h6>
+        <img style="height: 150px" src="assets/cloudy.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

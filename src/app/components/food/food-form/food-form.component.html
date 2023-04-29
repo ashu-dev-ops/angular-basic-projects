@@ -1,0 +1,51 @@
+<!-- <p>food-form works!</p> -->
+<h1 style="text-align: center; text-transform: capitalize">
+  food item assignment using @input and @output
+</h1>
+
+<div class="box-container">
+  <div class="box-1">
+    <div>
+      <form [formGroup]="foodForm" (ngSubmit)="onSubmit()" class="cs-box-1">
+        <div class="form-group m-2" style="width: 200px">
+          <input
+            type="string"
+            id="food"
+            placeholder="enter food item"
+            class="form-control"
+            formControlName="food"
+            name="food"
+          />
+        </div>
+        <div class="cs-box">
+          <input
+            type="submit"
+            class="btn btn-primary w-20 m-1"
+            value="Submit"
+            name=""
+          />
+        </div>
+      </form>
+    </div>
+
+    <div class="list con-box">
+      <div *ngIf="foods.length === 0; else elseBlock">
+        <h3 class="no-item" style="text-align: center; margin-top: 200">
+          sorry no food item <br />
+          selected.
+        </h3>
+      </div>
+      <ng-template #elseBlock>
+        <!-- <ul *ngFor="let todo of todos; index as i"> -->
+        <!-- <li *ngFor="let item of tasks; index as i;>d</li> -->
+        <ul *ngFor="let item of foods; index as i">
+          <app-food-item [food]="item.food" (deleteFood)="onDeleteFood($event)">
+          </app-food-item>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+  <div class="box-2">
+    <img src="assets/image-one.jpg" alt="s" />
+  </div>
+</div>
